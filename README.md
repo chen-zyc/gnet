@@ -39,14 +39,25 @@ func main() {
 示例：
 
 ```go
-func ExampleIPV4OrV6(t *testing.T) {
-	fmt.Println(IsIPv6(net.ParseIP("fe80::1")))
-	fmt.Println(IsIPv4(net.ParseIP("fe80::1")))
-	fmt.Println(IsIPv6(net.ParseIP("127.0.0.1")))
+func ExampleIsIPv4() {
 	fmt.Println(IsIPv4(net.ParseIP("127.0.0.1")))
+	fmt.Println(IsIPv4(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv4(net.ParseIP("")))
 
 	// Output:
 	// true
+	// false
+	// false
+}
+
+func ExampleIsIPv6() {
+	fmt.Println(IsIPv6(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv6(net.ParseIP("127.0.0.1")))
+	fmt.Println(IsIPv6(net.ParseIP("")))
+
+	// Output:
+	// true
+	// false
 	// false
 }
 ```
