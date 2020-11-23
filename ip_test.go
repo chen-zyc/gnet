@@ -1,6 +1,7 @@
 package gnet
 
 import (
+	"fmt"
 	"net"
 	"testing"
 )
@@ -71,4 +72,15 @@ func TestIsIPv6(t *testing.T) {
 			}
 		})
 	}
+}
+
+func ExampleIPV4OrV6(t *testing.T) {
+	fmt.Println(IsIPv6(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv4(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv6(net.ParseIP("127.0.0.1")))
+	fmt.Println(IsIPv4(net.ParseIP("127.0.0.1")))
+
+	// Output:
+	// true
+	// false
 }

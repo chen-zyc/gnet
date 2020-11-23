@@ -30,3 +30,23 @@ func main() {
 	fmt.Println(r.ContentRange(2 << 10)) // bytes 0-1023/2048
 }
 ```
+
+
+## IP
+
+【作用】判断 IP 是 v4 还是 v6。
+
+示例：
+
+```go
+func ExampleIPV4OrV6(t *testing.T) {
+	fmt.Println(IsIPv6(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv4(net.ParseIP("fe80::1")))
+	fmt.Println(IsIPv6(net.ParseIP("127.0.0.1")))
+	fmt.Println(IsIPv4(net.ParseIP("127.0.0.1")))
+
+	// Output:
+	// true
+	// false
+}
+```
