@@ -39,22 +39,22 @@ func DefaultTransportDialerOption(d *net.Dialer) TransportOption {
 }
 
 type TransportOpts struct {
-	DialTimeout            gtime.Duration `json:"dial_timeout"`
-	DialKeepalive          gtime.Duration `json:"dial_keepalive"`
-	TLSHandshakeTimeout    gtime.Duration `json:"tls_handshake_timeout"`
-	IdleConnTimeout        gtime.Duration `json:"idle_conn_timeout"`
-	ResponseHeaderTimeout  gtime.Duration `json:"response_header_timeout"`
-	ExpectContinueTimeout  gtime.Duration `json:"expect_continue_timeout"`
-	MaxResponseHeaderBytes *int64         `json:"max_response_header_bytes"`
-	MaxIdleConns           *int           `json:"max_idle_conns"`
-	MaxIdleConnsPerHost    *int           `json:"max_idle_conns_per_host"`
-	MaxConnsPerHost        *int           `json:"max_conns_per_host"`
-	WriteBufferSize        *int           `json:"write_buffer_size"`
-	ReadBufferSize         *int           `json:"read_buffer_size"`
-	ForceAttemptHTTP2      *bool          `json:"force_attempt_http2"`
-	DisableKeepAlives      *bool          `json:"disable_keep_alives"`
-	DisableCompression     *bool          `json:"disable_compression"`
-	LocalAddr              string         `json:"local_addr"`
+	DialTimeout            gtime.Duration `json:"dial_timeout" yaml:"dial_timeout" mapstructure:"dial_timeout"`
+	DialKeepalive          gtime.Duration `json:"dial_keepalive" yaml:"dial_keepalive" mapstructure:"dial_keepalive"`
+	TLSHandshakeTimeout    gtime.Duration `json:"tls_handshake_timeout" yaml:"tls_handshake_timeout" mapstructure:"tls_handshake_timeout"`
+	IdleConnTimeout        gtime.Duration `json:"idle_conn_timeout" yaml:"idle_conn_timeout" mapstructure:"idle_conn_timeout"`
+	ResponseHeaderTimeout  gtime.Duration `json:"response_header_timeout" yaml:"response_header_timeout" mapstructure:"response_header_timeout"`
+	ExpectContinueTimeout  gtime.Duration `json:"expect_continue_timeout" yaml:"expect_continue_timeout" mapstructure:"expect_continue_timeout"`
+	MaxResponseHeaderBytes *int64         `json:"max_response_header_bytes" yaml:"max_response_header_bytes" mapstructure:"max_response_header_bytes"`
+	MaxIdleConns           *int           `json:"max_idle_conns" yaml:"max_idle_conns" mapstructure:"max_idle_conns"`
+	MaxIdleConnsPerHost    *int           `json:"max_idle_conns_per_host" yaml:"max_idle_conns_per_host" mapstructure:"max_idle_conns_per_host"`
+	MaxConnsPerHost        *int           `json:"max_conns_per_host" yaml:"max_conns_per_host" mapstructure:"max_conns_per_host"`
+	WriteBufferSize        *int           `json:"write_buffer_size" yaml:"write_buffer_size" mapstructure:"write_buffer_size"`
+	ReadBufferSize         *int           `json:"read_buffer_size" yaml:"read_buffer_size" mapstructure:"read_buffer_size"`
+	ForceAttemptHTTP2      *bool          `json:"force_attempt_http2" yaml:"force_attempt_http2" mapstructure:"force_attempt_http2"`
+	DisableKeepAlives      *bool          `json:"disable_keep_alives" yaml:"disable_keep_alives" mapstructure:"disable_keep_alives"`
+	DisableCompression     *bool          `json:"disable_compression" yaml:"disable_compression" mapstructure:"disable_compression"`
+	LocalAddr              string         `json:"local_addr" yaml:"local_addr" mapstructure:"local_addr"`
 
 	defaultTransport *http.Transport
 	defaultDialer    *net.Dialer
